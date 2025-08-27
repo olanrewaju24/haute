@@ -4,25 +4,21 @@ import "./corporate.css";
 const Corporate = () => {
   const [products, setProducts] = useState([]);
 
-  // Fetch products from Fake Store API
-  // useEffect(() => {
-  //   fetch("https://fakestoreapi.com/products/category/women's clothing")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       // Limit to 4 products for Featured section
-  //       setProducts(data.slice(0, 4));
-  //     })
-  //     .catch((err) => console.error("Error fetching products:", err));
-  // }, []);
-useEffect(() => {
-  fetch("https://fakestoreapi.com/products")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Fetched products:", data); // check in browser console
-      setProducts(data.slice(0, 4));
-    })
-    .catch((err) => console.error("Error fetching products:", err));
-}, []);
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Fetched products:", data);
+
+        // Shuffle the products randomly
+        const shuffled = [...data].sort(() => 0.5 - Math.random());
+
+        // Pick the first 4 from the shuffled list
+        setProducts(shuffled.slice(0, 4));
+      })
+      .catch((err) => console.error("Error fetching products:", err));
+  }, []);
+
 
   return (
     <div className="corporate-page">
