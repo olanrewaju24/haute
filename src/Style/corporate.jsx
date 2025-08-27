@@ -4,16 +4,6 @@ import "./corporate.css";
 const Corporate = () => {
   const [products, setProducts] = useState([]);
 
-  // Fetch products from Fake Store API
-  // useEffect(() => {
-  //   fetch("https://fakestoreapi.com/products/category/women's clothing")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       // Limit to 4 products for Featured section
-  //       setProducts(data.slice(0, 4));
-  //     })
-  //     .catch((err) => console.error("Error fetching products:", err));
-  // }, []);
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
