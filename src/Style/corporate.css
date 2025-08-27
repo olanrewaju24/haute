@@ -72,9 +72,9 @@
 }
 
 .card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+  width: 1200px;
+  height: auto;
+display: block;
 }
 
 .card p {

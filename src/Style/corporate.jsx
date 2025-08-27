@@ -1,10 +1,32 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./corporate.css";
 
-const Corporate= () => {
+const Corporate = () => {
+  const [products, setProducts] = useState([]);
+
+  // Fetch products from Fake Store API
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products/category/women's clothing")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       // Limit to 4 products for Featured section
+  //       setProducts(data.slice(0, 4));
+  //     })
+  //     .catch((err) => console.error("Error fetching products:", err));
+  // }, []);
+useEffect(() => {
+  fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Fetched products:", data); // check in browser console
+      setProducts(data.slice(0, 4));
+    })
+    .catch((err) => console.error("Error fetching products:", err));
+}, []);
+
   return (
     <div className="corporate-page">
-    
+      {/* Hero Section */}
       <section className="hero1">
         <div className="hero1-content">
           <h1>Corporate</h1>
@@ -12,29 +34,25 @@ const Corporate= () => {
         </div>
       </section>
 
-    
+      {/* Featured Items */}
       <section className="featured">
         <h2>Featured Items</h2>
         <div className="grid">
-          <div className="card">
-            <img src="https://i.pinimg.com/1200x/b5/30/af/b530af74331d81a73cea533dbe69f858.jpg" alt="Suit" />
-            <p>Formal Suit</p>
-          </div>
-          <div className="card">
-            <img src="https://i.pinimg.com/736x/99/45/ab/9945abb49e5d8c9e77aef936a32d27b1.jpg" alt="Skirt" />
-            <p>Pencil Skirt</p>
-          </div>
-          <div className="card">
-            <img src="https://i.pinimg.com/736x/8c/bf/95/8cbf9503abb8756dd73fadcc6141a108.jpg" alt="Shoes" />
-            <p>Classic Heels</p>
-          </div>
-          <div className="card">
-            <img src="https://i.pinimg.com/1200x/bf/79/00/bf79008d39f796456bf0d85dd8cf681b.jpg" alt="Dress" />
-            <p>Office Dress</p>
-          </div>
+          {products.length > 0 ? (
+            products.map((item) => (
+              <div className="card" key={item.id}>
+                <img src={item.image} alt={item.title} />
+                <p>{item.title}</p>
+                <p>${item.price}</p>
+              </div>
+            ))
+          ) : (
+            <p>Loading featured products...</p>
+          )}
         </div>
       </section>
 
+      {/* Shop by Category */}
       <section className="shop-category">
         <h2>Shop by Category</h2>
         <div className="buttons">
@@ -44,19 +62,23 @@ const Corporate= () => {
         </div>
       </section>
 
-      
+      {/* Lookbook */}
       <section className="lookbook">
-        <img src="https://i.pinimg.com/736x/0d/dd/94/0ddd94efb8a1aaee6d63390f475dac96.jpg" alt="Lookbook" />
+        <img
+          src="https://i.pinimg.com/736x/0d/dd/94/0ddd94efb8a1aaee6d63390f475dac96.jpg"
+          alt="Lookbook"
+        />
         <div className="lookbook-text">
           <h2>How to Dress for Work Meetings</h2>
           <p>
-            Get inspired by polished outfits perfect for work meetings and corporate settings.
+            Get inspired by polished outfits perfect for work meetings and
+            corporate settings.
           </p>
           <button>View Lookbook</button>
         </div>
       </section>
     </div>
   );
-}
+};
 
 export default Corporate;
