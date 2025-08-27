@@ -1,0 +1,41 @@
+footer {
+  background-color: #0A0A0A; /* Rich Black */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #E60073; /* Fuchsia accent */
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #ff4da6;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 18px;
+  color: #E60073;
+}
+
+footer p {
+  font-size: 12px;
+  margin-top: 20px;
+  opacity: 0.8;
+}

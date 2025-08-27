@@ -1,0 +1,187 @@
+.dinner-page {
+  background-color: rgb(221, 191, 147);
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.hero-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  background-color: #b68f5c; 
+  height: 80vh;
+}
+
+.hero-text {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2e2e2e;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.hero-text button {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #630835; /* Dusty Rose */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-text button:hover {
+  background-color: #c58d8d;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  width: 60%;
+  height: 70vh;
+ /* border-radius: 12px;*/
+}
+
+.featured {
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.featured h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.featured .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 1rem;
+  font-weight: 600;
+}
+
+
+.shop-category {
+  padding: 4rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.shop-category h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.shop-category .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  color: #000;
+
+}
+
+.shop-category button {
+  border: 1px solid #333;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #000;
+  width: 30%;
+}
+
+.shop-category button:hover {
+  background: black;
+  color: white;
+}
+
+.lookbook {
+  padding: 4rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.lookbook img {
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  height: 100vh;
+}
+
+.lookbook-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.lookbook-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.lookbook-text button {
+  background: #630835;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.lookbook-text button:hover {
+  background: #444;
+}
+
+
+@media (min-width: 768px) {
+  .lookbook {
+    grid-template-columns: 1fr 1fr;
+  }
+}
