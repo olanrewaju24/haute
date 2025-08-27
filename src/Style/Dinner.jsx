@@ -22,7 +22,7 @@ const Dinner= () => {
         />
       </div>
     </div>
-      {/* Featured Items */}
+      {/*  this is the Featured Items */}
       <section className="featured">
         <h2>Featured Items</h2>
         <div className="grid">
