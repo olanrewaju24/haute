@@ -14,15 +14,21 @@ const Corporate = () => {
   //     })
   //     .catch((err) => console.error("Error fetching products:", err));
   // }, []);
-useEffect(() => {
-  fetch("https://fakestoreapi.com/products")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Fetched products:", data); // check in browser console
-      setProducts(data.slice(0, 4));
-    })
-    .catch((err) => console.error("Error fetching products:", err));
-}, []);
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Fetched products:", data);
+
+        // Shuffle the products randomly
+        const shuffled = [...data].sort(() => 0.5 - Math.random());
+
+        // Pick the first 4 from the shuffled list
+        setProducts(shuffled.slice(0, 4));
+      })
+      .catch((err) => console.error("Error fetching products:", err));
+  }, []);
+
 
   return (
     <div className="corporate-page">
