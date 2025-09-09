@@ -1,20 +1,28 @@
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { useContext } from "react";
 import { CartContext } from "../Features/ContextProvider";
 
 const Navbar = () => {
-   const { cart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <div className="logo">
         <Link to="/">
-        <span className="brand">HAUTE </span>
-        <span className="accent">Thread
-            </span>
+          <span className="brand">HAUTE </span>
+          <span className="accent">Thread</span>
         </Link>
       </div>
-      <ul className="nav-links">
+
+      {/* Hamburger Button */}
+      <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+        ☰
+      </div>
+
+      {/* Nav Links */}
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
         <li>
           <Link to="/">Home</Link>
         </li>

@@ -4,44 +4,59 @@
   font-family: Arial, sans-serif;
 }
 
-.hero1 {
-  position: relative;
-  width: 100%;
-  height: 70vh;
+.hero1-split {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("https://i.pinimg.com/736x/70/dd/41/70dd41200b006b9775833e90ef8b36ae.jpg") center/cover no-repeat;
+/*  align-items: center;*/
+  justify-content: space-between;
+  padding: 60px 10%;
+  background-color:  #f5f2ed; 
+  height: 80vh;
 }
 
-.hero1-content {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  
+.hero1-text {
+  flex: 1;
+  padding-right: 40px;
 }
 
-.hero1-content h1 {
+.hero1-text h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: #fff;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+  color: #2e2e2e;
 }
 
-.hero1-content button {
-  background: #630835;
+.hero1-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.hero1-text button {
+  padding: 12px 28px;
+  font-size: 1.1rem;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  background-color: #630835; /* Dusty Rose */
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
-.hero1-content button:hover {
-  background: #444;
+.hero1-text button:hover {
+  background-color: #c58d8d;
+}
+
+.hero1-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero1-image img {
+  width: 80%;
+  height: 70vh;
+  margin-left: 20px;
+ border-radius: 12px;
 }
 
 .featured {

@@ -2,6 +2,8 @@ import React from "react";
 import "./Dinner.css";
 
 const Dinner= () => {
+
+  
   return (
     <div className="dinner-page">
       <div className="hero-split">

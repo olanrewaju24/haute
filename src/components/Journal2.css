@@ -44,3 +44,9 @@
   background-color: #b30059;
   transform: translateY(-2px);
 }
+
+@media (min-width: 768px) {
+  .flex-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}

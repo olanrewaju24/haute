@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./corporate.css";
 
 const Corporate = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://dummyjson.com/products?limit=10")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Fetched products:", data);
+        console.log("Fetched products:", data.products);
 
         // Shuffle the products randomly
-        const shuffled = [...data].sort(() => 0.5 - Math.random());
+        const shuffled = [...data.products].sort(() => 0.5 - Math.random());
 
         // Pick the first 4 from the shuffled list
         setProducts(shuffled.slice(0, 4));
@@ -19,16 +19,24 @@ const Corporate = () => {
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
 
-
   return (
     <div className="corporate-page">
       {/* Hero Section */}
-      <section className="hero1">
-        <div className="hero1-content">
-          <h1>Corporate</h1>
+      <div className="hero1-split">
+        <div className="hero1-image">
+          <img
+            src="https://i.pinimg.com/736x/70/dd/41/70dd41200b006b9775833e90ef8b36ae.jpg"
+            alt="Corporate Wear"
+          />
+        </div>
+
+        {/* Right Side - Text */}
+        <div className="hero1-text">
+          <h1>Corporate Wear</h1>
+          <p>Discover classy outfits for your work.</p>
           <button>Shop Now</button>
         </div>
-      </section>
+      </div>
 
       {/* Featured Items */}
       <section className="featured">
@@ -37,7 +45,7 @@ const Corporate = () => {
           {products.length > 0 ? (
             products.map((item) => (
               <div className="card" key={item.id}>
-                <img src={item.image} alt={item.title} />
+                <img src={item.thumbnail} alt={item.title} />
                 <p>{item.title}</p>
                 <p>${item.price}</p>
               </div>
