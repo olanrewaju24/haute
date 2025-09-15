@@ -23,18 +23,19 @@ const Corporate = () => {
     <div className="corporate-page">
       {/* Hero Section */}
       <div className="hero1-split">
-        <div className="hero1-image">
-          <img
-            src="https://i.pinimg.com/736x/70/dd/41/70dd41200b006b9775833e90ef8b36ae.jpg"
-            alt="Corporate Wear"
-          />
+        <div className="hero1-text">
+           <h1>Corporate Wear</h1>
+          <p>Discover classy outfits for your work.</p>
+          <button>Shop Now</button>
+          
         </div>
 
         {/* Right Side - Text */}
-        <div className="hero1-text">
-          <h1>Corporate Wear</h1>
-          <p>Discover classy outfits for your work.</p>
-          <button>Shop Now</button>
+        <div className="hero1-image">
+         <img
+            src="https://i.pinimg.com/736x/70/dd/41/70dd41200b006b9775833e90ef8b36ae.jpg"
+            alt="Corporate Wear"
+          />
         </div>
       </div>
 

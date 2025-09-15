@@ -1,5 +1,5 @@
 .corporate-page {
-  background-color: #f5f2ed;
+  background-color: #F5F1EB;
   color: #333;
   font-family: Arial, sans-serif;
 }
@@ -16,6 +16,7 @@
 .hero1-text {
   flex: 1;
   padding-right: 40px;
+   margin-top: 100px;
 }
 
 .hero1-text h1 {

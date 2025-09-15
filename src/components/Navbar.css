@@ -9,6 +9,8 @@
     background-color: #2E2E2E;
     height: 100px;
     width: 100%; 
+    position: relative;
+    z-index: 1000;
 }
 
 .logo {
@@ -88,12 +90,15 @@
   display: none;
   font-size: 2rem;
   cursor: pointer;
+  color: white;
+
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    color: #eee;
   }
 
   .nav-links {
